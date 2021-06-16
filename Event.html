@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Event Management</title>
+</head>
+
+<body style="background-color:rgb(0, 0, 0);">
+  <style>
+    /* #k {
+      color: red;
+      align-items: center;
+      font-size:x-large;
+
+    } */
+    #hover:hover {
+      transition-duration: 1s;
+      transform: scale(1.07);
+      /* background-color: rgb(8, 8, 8); */
+      color: rgb(5, 5, 5);
+    }
+
+    #k1:hover {
+      transition-duration: 1s;
+      transform: scale(1.05);
+      /* background-color: rgb(175, 39, 39); */
+      color: rgb(5, 5, 5);
+    }
+
+    .body {
+      background-color: black;
+
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+    .aboutus {
+      text-align: right;
+      color: aliceblue;
+      font-family: 'Roboto';
+      font-weight: 300;
+      font-size: 50px;
+      padding-top: 0vh;
+      padding-left: 5ch;
+      height: 10vh;
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      -webkit-transform: translate3d(0, 0, 0);
+
+    }
+
+    .span1 {
+      size: larger;
+      size: 1000ch;
+      color: aliceblue;
+
+    }
+
+    .aboutus {
+
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      size: 40px;
+
+    }
+
+    .aboutus:first-of-type {
+      animation: showup 4s infinite;
+    }
+
+    .aboutus:last-of-type {
+      width: 100px;
+      animation: reveal 4s infinite;
+    }
+
+    .aboutus:last-of-type span {
+      margin-left: -3500x;
+      animation: slidein 7s infinite;
+    }
+
+    @keyframes showup {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes slidein {
+      0% {
+        margin-left: -800px;
+      }
+
+      20% {
+        margin-left: -800px;
+      }
+
+      35% {
+        margin-left: 10px;
+      }
+
+      100% {
+        margin-left: 0px;
+      }
+    }
+
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+        width: 0px;
+      }
+
+      20% {
+        opacity: 1;
+        width: 0px;
+      }
+
+      30% {
+        width: 355px;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        width: 355px;
+      }
+    }
+
+    .middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn {
+      position: relative;
+      display: block;
+      color: white;
+      font-size: 14px;
+      font-family: "montserrat";
+      text-decoration: none;
+      margin: 30px 100px;
+      border: 2px solid #ff7675;
+      padding: 14px 70px;
+      text-transform: uppercase;
+      overflow: hidden;
+      align-items: center;
+      transition: 1s all ease;
+    }
+
+    .btn::before {
+      background: #ff7675;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      transition: all 0.6s ease;
+    }
+
+    .btn1::before {
+      width: 0%;
+      height: 100%;
+    }
+
+    .btn1:hover::before {
+      width: 100%;
+    }
+  </style>
+  <div class="container">
+
+
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span style="color: blanchedalmond;" class="ml-3 text-xl">Kun Event Management</span>
+        </a>
+        <nav style="color: white;"
+          class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+          <a href="#home" class="mr-5 hover:text-gray-900">Home</a>
+          <a href="#login" class="mr-5 hover:text-gray-900">Login</a>
+          <a href="#aboutus" class="mr-5 hover:text-gray-900">About Us</a>
+          <a href="#events" class="mr-5 hover:text-gray-900">Events</a>
+          <a href="#contact" class="mr-5 hover:text-gray-900">Contact Us</a>
+
+
+      </nav>
+
+      </div>
+
+    </header>
+
+    <section id="home1" class="text-gray-600 body-font">
+      <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+
+
+
+        <div style="color: white;"
+          class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 style="color: white; text-align: left; size: 100ch;" id="home"
+            class="title-font sm:text-3x2 text-3xl mb-4 font-medium text-gray-900">Life
+            is an Event,Make it Memorable
+            <br class="hidden lg:inline-block">Our Bussiness is Making Memories
+          </h1>
+          <p class="mb-8 leading-relaxed sm:text-2x2 text-2xl ">An Event shouldn't be just an experimental thing, it
+            should be an emotional
+            thing.</p>
+
+
+        </div>
+
+        <div class="middle">
+
+
+
+          <!-- <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero"
+          src="https://source.unsplash.com/720x600/?Event,Design">
+      </div> -->
+        </div>
+        <br>
+        <a href="" class="btn btn1">Join us ?</a>
+
+
+    </section>
+  </div>
+
+  <hr>
+
+
+  <!-- component -->
+  <!-- This is an example component -->
+  <div style="background: black;" id="login" class="font-sans">
+    <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 "
+      style="background: black;">
+      <div class="relative sm:max-w-sm w-full">
+        <div class="card bg-blue-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
+        <div class="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
+        <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
+
+          <label for=" " class="block mt-3 text-sm text-gray-700 text-center font-semibold">
+            Login
+          </label>
+          <form method="#" action="#aboutus" class="mt-10">
+
+            <div>
+              <input type="email" placeholder="User Name"
+                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
+            </div>
+
+            <div class="mt-7">
+              <input type="password" placeholder="password"
+                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
+            </div>
+
+            <div class="mt-7 flex">
+              <label for="remember_me" class="inline-flex items-center w-full cursor-pointer">
+                <input id="remember_me" type="checkbox"
+                  class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="remember">
+                <span class="ml-2 text-sm text-gray-600">
+                  Remember Me
+                </span>
+              </label>
+              <div class="w-full text-right">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="#">
+                  Forgot Your password
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-7">
+              <button
+                class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                Login
+                <a href="#aboutus"></a>
+              </button>
+            </div>
+
+
+            <div class="flex mt-7 items-center text-center">
+
+              <hr class="border-gray-300 border-1 w-full rounded-md">
+              <label class="block font-medium text-sm text-gray-600 w-full">
+                Or Sign Up Using
+              </label>
+              <hr class="border-gray-300 border-1 w-full rounded-md">
+            </div>
+            <div class="flex mt-7 justify-center w-full">
+              <button
+                class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+
+                Facebook <a href="https://www.facebook.com/">
+
+              </button>
+
+              <button
+                class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+
+                Google
+
+              </button>
+            </div>
+          </form>
+          <div class="mt-7">
+            <div class="flex justify-center items-center">
+              <label class="mr-2">Don't have a account?</label>
+              <a href="registration.html"
+                class=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                Create New Account
+              </a>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <br>
+
+  <!-- component -->
+
+  <section class="text-blueGray-700 ">
+    <div class="container items-center px-5 py-8 mx-auto">
+      <div class="flex flex-col mb-12 text-left">
+        <div class="w-full mx-auto lg:w-1/3">
+          <div class="p-6">
+
+            <div style="text-align:left;" class="aboutus sm:text-6x2 text-5xl">About Us</div>
+
+            <div>
+              <p class="span1"> We not only organize extravagant
+                event,we organize mesmerizing momemts for you
+                .Because events may be forgotten but moments will last a lifetime. We offers complete events planning
+                and
+                management solutions ranging from theme events, Private parties
+                weddings , conferences, fashion shows product launches, brant activation , award ceremonies, outdoor
+                events , etc.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <section class="text-blueGray-700 ">
+    <div class="container items-center px-5 py-8 mx-auto lg:px-24">
+      <h1 style="color:white" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Our Services</h1>
+      <br><br>
+      <div class="flex flex-wrap mb-12 text-left" style="background-color: rgb(0, 0, 0);">
+        <div class="w-full mx-auto lg:w-1/3">
+          <div class="p-6">
+            <img id="hover" class="object-cover object-center w-full mb-8 lg:h-48 md:h-36"
+              src="https://punetourism.co.in/images/places-to-visit/headers/shaniwar-wada-pune-tourism-entry-fee-timings-holidays-reviews-header.jpg"
+              alt="blog">
+            <h1 style="color:white"
+              class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font">
+              PUNE </h1>
+
+            <a href="#" class="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-black "
+              title="read more"> Read More » </a>
+          </div>
+        </div>
+        <div class="w-full mx-auto lg:w-1/3">
+          <div class="p-6">
+            <img id="hover" class="object-cover object-center w-full mb-8 lg:h-48 md:h-36"
+              src="http://2.bp.blogspot.com/-zRGvTQ5OGeI/UAqkDX6YBXI/AAAAAAAAFaI/lxkEQFTXonc/s1600/4.+Ramling+-+Old+Shirur+(21).JPG"
+              alt="blog">
+            <h1 style="color:white"
+              class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font">
+              SHIRUR </h1>
+
+            <a href="#" class="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-black "
+              title="read more"> Read More » </a>
+          </div>
+        </div>
+        <div class="w-full mx-auto lg:w-1/3">
+          <div class="p-6">
+            <img id="hover" class="object-cover object-center w-full mb-8 lg:h-48 md:h-36"
+              src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bXVtYmFpfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+              alt="blog">
+            <h1 style="color: white;"
+              class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font">
+              MUMBAI </h1>
+
+            <a href="#" class="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-black "
+              title="read more"> Read More » </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+
+
+
+  <section id="events" class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap w-full mb-20">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1 style="color: white;" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Event
+            Categories</h1>
+          <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+        </div>
+
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/02/valentines-day-1581614371.jpg"
+              alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Valentine Parties</h2>
+
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://www.weddingsutra.com/images/Vendor_Images/Wedding_Planners/IWP-Indian_Wedding_Planners/iwp-13.jpg"
+              alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Arrange Marriages</h2>
+
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://blog.venuelook.com/wp-content/uploads/2020/01/Tassels-are-Love.jpg" alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Birthday Parties</h2>
+
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://5.imimg.com/data5/LW/NW/TB/SELLER-8669312/social-family-events-500x500.jpg" alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Family Functions</h2>
+
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://www.mdx.ac.uk/__data/assets/image/0023/321872/International-Tourism_herobanner.jpg"
+              alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Tourism Management</h2>
+
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://cdn0.weddingwire.in/emp/fotos/9/4/8/1/r10_2x_our-services-event-organiser-1_15_229481-1566197476.jpg"
+              alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Marriage Reception</h2>
+
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://blog.radissonblu.com/wp-content/uploads/2016/11/shutterstock_154677038.jpg" alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Christmas Parties</h2>
+
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img id="k1" class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://i.pinimg.com/originals/15/de/05/15de0590f6af536fe94e71ac75e32d40.jpg" alt="content">
+
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Farewell Parties</h2>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section id="contact" class="text-white-600 body-font relative">
+
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 style="color: white;" class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+
+
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label style="color: white;" for="name" class="leading-7 text-sm text-gray-600 ">Name</label>
+              <input type="text" id="name" name="name"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required>
+
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label style="color: white;" for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="email" id="email" name="email"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label style="color: white;" for="message" class="leading-7 text-sm text-gray-600">Message</label>
+              <textarea id="message" name="message"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+
+
+            <button onclick="showAlert()"
+              class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg action:submit ">Submit</button>
+          </div>
+
+          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+            <a href="mailto:kunalbg912@gmail.com">kunalbg912@gmail.com</a>
+            <p class="leading-normal my-5">Kunal Gunjal
+              <br>NBNSSOE , Pune India
+            </p>
+
+
+          </div>
+        </div>
+      </div>
+  </section>
+  <div class="footer-2 bg-gray-800 pt-6 md:pt-12">
+    <div class="container px-4 mx-auto">
+
+      <div class="md:flex md:flex-wrap md:-mx-4 py-6 md:pb-12">
+
+        <div class="footer-info lg:w-1/3 md:px-4">
+          <h4 class="text-white text-2xl mb-4">The Project Handled by KUNAL GUNJAL</h4>
+          <p class="text-gray-400">Here is the public Website for Event Management 😍 </p>
+          <div class="mt-4">
+            <button class="bg-twitter py-2 px-4 text-white rounded ml-2 mt-2 transition-colors duration-300">
+              <span class="fab fa-twitter mr-2"></span> <a href="https://twitter.com/KunalGunjal9/">Follow on Twitter -
+                @KunalGunjal9 </a>
+            </button>
+            <button class="bg-twitter py-2 px-4 text-white rounded ml-2 mt-2 transition-colors duration-300">
+              <span class="fab fa-twitter mr-2"></span> <a
+                href="https://www.linkedin.com/in/kunal-gunjal-3a23431ab/?senderId=kunal-gunjal-3a23431ab">Follow on
+                LinkedIn - Kunal Gunjal </a>
+            </button>
+          </div>
+        </div>
+
+        <div class="md:w-2/3 lg:w-1/3 md:px-4 xl:pl-16 mt-12 lg:mt-0">
+          <div class="sm:flex">
+            <div class="sm:flex-1">
+              <h6 class="text-base font-medium text-white uppercase mb-2">About</h6>
+              <div>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Owner</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Events</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Our Team</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Opportunities</a>
+              </div>
+            </div>
+            <div class="sm:flex-1 mt-4 sm:mt-0">
+              <h6 class="text-base font-medium text-white uppercase mb-2">What we offer</h6>
+              <div>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Free Demo's</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Virtual Free Demo</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Events</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Internships</a>
+                <a href="#" class="text-gray-400 py-1 block hover:underline">Freebies</a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="border-t border-solid border-gray-900 mt-4 py-4">
+      <div class="container px-4 mx-auto">
+
+        <div class="md:flex md:-mx-4 md:items-center">
+          <div class="md:flex-1 md:px-4 text-center md:text-left">
+            <p class="text-white">&copy; <strong>FWR</strong></p>
+          </div>
+          <div class="md:flex-1 md:px-4 text-center md:text-right">
+            <a href="#" class="py-2 px-4 text-white inline-block hover:underline">Terms of Service</a>
+            <a href="#" class="py-2 px-4 text-white inline-block hover:underline">Privacy Policy</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <script>
+    function showAlert() {
+      alert("Thank you for reaching us !");
+    }
+    const spans = document.querySelectorAll('.word span');
+
+    spans.forEach((span, idx) => {
+      span.addEventListener('click', (e) => {
+        e.target.classList.add('active');
+      });
+      span.addEventListener('animationend', (e) => {
+        e.target.classList.remove('active');
+      });
+
+      // Initial animation
+      setTimeout(() => {
+        span.classList.add('active');
+      }, 750 * (idx + 1))
+    });
+  </script>
+
+</body>
+
+</html>
